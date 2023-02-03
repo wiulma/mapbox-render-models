@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+Properties localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
 
 buildscript {
     ext {
@@ -39,7 +39,7 @@ allprojects {
                 // This should always be `mapbox` (not your username).
                 username = 'mapbox'
                 // Use the secret token you stored in gradle.properties as the password
-                password =  properties.getProperty('MAPBOX_DOWNLOADS_TOKEN') // project.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: "sk.eyJ1IjoiZ2lvcmdpb3pldHQiLCJhIjoiY2xkbGFpZTlqMDlnczN2cnFoYW05ZzVsciJ9.4TXhD4go50temJaVbTKIjA"
+                password =  localProperties.getProperty('MAPBOX_DOWNLOADS_TOKEN')
             }
         }
         google()
