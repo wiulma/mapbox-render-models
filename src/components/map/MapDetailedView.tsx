@@ -2,6 +2,9 @@ import { memo } from 'react'
 import { StyleSheet } from 'react-native'
 import { Atmosphere, RasterDemSource, SkyLayer, Terrain } from '@rnmapbox/maps'
 
+// mapbox://mapbox.mapbox-terrain-dem-v1
+// mapbox://styles/giorgiozett/cldo60m3v000h01pg1lzppjkh
+
 export const MapDetailedView = memo(() => {
 	console.log('use MapDetaildView')
 	return (

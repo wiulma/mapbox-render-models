@@ -14,6 +14,7 @@
     "clean:ios": "rm -rf ./ios/build",
     "clean": "rm -rf ios/Pods && npm run clean:android && npm run clean:ios && rm -rf node_modules",
     "reinstall:android": "npm run reset-cache && npm run clean:android && npm i --force",
+    "reinstall:ios": "npm run reset-cache && npm run clean:ios && npm i --force && cd ios && pod install && cd ..",
     "reinstall": "npm run reset-cache && npm run clean && npm i --force && cd ios && pod install && cd ..",
     "test": "jest"
   },
